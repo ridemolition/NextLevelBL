@@ -2,8 +2,8 @@
 @use 'variables' as v;
 
 // Importaciones de Fuentes
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap';
 
 // Reset y estilos base
 * {
@@ -23,7 +23,6 @@ body {
   background-color: v.$color-black;
   color: v.$color-light;
   line-height: 1.6;
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -89,7 +88,7 @@ h6 {
 }
 
 // Importa todos los componentes y estilos de páginas
-@import "./components.scss";
+@import "./components";
 @import "./components/_nosotros";
 @import "./components/promociones";
 @import "./components/menu";

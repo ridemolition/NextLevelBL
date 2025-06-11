@@ -7,15 +7,15 @@
   justify-content: flex-start;
   min-height: calc(100vh - 160px);
   background-color: #181818;
-  padding: 3rem 1rem 2rem 1rem;
+  padding: 3rem 1rem 2rem;
 
   .login-form {
     background: #202020;
-    padding: 2.5rem 2rem 2rem 2rem;
+    padding: 2.5rem 2rem 2rem;
     border-radius: 16px;
     width: 100%;
     max-width: 420px;
-    box-shadow: 0 0 12px 2px rgba(255, 216, 0, 0.15);
+    box-shadow: 0 0 12px 2px rgba(255, 216, 0, 15%);
     border: 2px solid v.$color-secondary;
     position: relative;
     margin-top: 2.5rem;
@@ -39,10 +39,12 @@
       color: #fff;
       font-size: 1.08rem;
       transition: border-color 0.3s ease;
+
       &:focus {
         outline: none;
         border-color: v.$color-secondary;
       }
+
       &::placeholder {
         color: #888;
       }
@@ -60,9 +62,11 @@
       cursor: pointer;
       margin-top: 0.5rem;
       transition: background-color 0.3s ease;
+
       &:hover {
         background-color: darken(v.$color-secondary, 10%);
       }
+
       &:disabled {
         background-color: #444;
         cursor: not-allowed;
@@ -70,11 +74,11 @@
     }
 
     .error {
-      color: #ff4444;
+      color: #f44;
       text-align: center;
       margin-bottom: 1rem;
       padding: 0.5rem;
-      background-color: rgba(255, 68, 68, 0.1);
+      background-color: rgba(255, 68, 68, 10%);
       border-radius: 4px;
     }
   }
@@ -83,6 +87,7 @@
     margin-top: 1.5rem;
     text-align: center;
     width: 100%;
+
     a,
     button {
       display: inline-block;
@@ -96,6 +101,7 @@
       border: none;
       cursor: pointer;
       transition: background 0.2s;
+
       &:hover {
         background: darken(v.$color-secondary, 10%);
       }
@@ -106,8 +112,10 @@
 @media (max-width: 600px) {
   .login-form-container {
     padding: 1rem 0.2rem;
+
     .login-form {
       padding: 1.2rem 0.5rem;
+
       h2 {
         font-size: 1.3rem;
       }

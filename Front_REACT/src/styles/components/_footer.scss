@@ -1,11 +1,11 @@
 @use '../variables' as v;
 
 .footer {
-  background: linear-gradient(to bottom, #000000, #111111);
+  background: linear-gradient(to bottom, #000, #111);
   color: white;
   padding: 4rem 0 1rem;
   margin-top: auto;
-  border-top: 1px solid rgba(252, 227, 3, 0.1); // Línea divisoria sutil
+  border-top: 1px solid rgba(252, 227, 3, 10%); // Línea divisoria sutil
 
   .footer-content {
     max-width: 1200px;
@@ -95,7 +95,7 @@
           width: 40px;
           height: 40px;
           border-radius: 50%;
-          background-color: rgba(255, 255, 255, 0.1);
+          background-color: rgba(255, 255, 255, 10%);
           color: white;
           text-decoration: none;
           transition: all 0.3s ease;
@@ -135,7 +135,7 @@
     margin: 0 auto;
     padding: 2rem 1rem 0;
     text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 10%);
 
     p {
       font-size: 0.9rem;

@@ -15,11 +15,11 @@
       grid-template-columns: 1fr 1fr;
       gap: 3rem;
       align-items: center;
-      background: linear-gradient(145deg, rgba(40, 40, 40, 0.9), rgba(20, 20, 20, 0.95));
+      background: linear-gradient(145deg, rgba(40, 40, 40, 90%), rgba(20, 20, 20, 95%));
       border: 2px solid v.$color-secondary;
       border-radius: v.$border-radius;
       padding: 2rem;
-      box-shadow: 0 0 20px rgba(252, 227, 3, 0.2);
+      box-shadow: 0 0 20px rgba(252, 227, 3, 20%);
 
       .historia-text {
         h3 {
@@ -28,7 +28,7 @@
           margin-bottom: 1.5rem;
           text-transform: uppercase;
           letter-spacing: 1px;
-          text-shadow: 0 0 10px rgba(252, 227, 3, 0.3);
+          text-shadow: 0 0 10px rgba(252, 227, 3, 30%);
         }
 
         p {
@@ -47,7 +47,7 @@
         img {
           width: 100%;
           height: auto;
-          filter: drop-shadow(0 0 20px rgba(252, 227, 3, 0.6)) brightness(1.2);
+          filter: drop-shadow(0 0 20px rgba(252, 227, 3, 60%)) brightness(1.2);
           transition: transform 0.3s ease;
 
           &:hover {
@@ -76,7 +76,7 @@
       gap: 2rem;
 
       .valor-card {
-        background: linear-gradient(145deg, rgba(40, 40, 40, 0.9), rgba(20, 20, 20, 0.95));
+        background: linear-gradient(145deg, rgba(40, 40, 40, 90%), rgba(20, 20, 20, 95%));
         border: 2px solid v.$color-secondary;
         border-radius: v.$border-radius;
         padding: 2rem;
@@ -84,7 +84,7 @@
 
         &:hover {
           transform: translateY(-5px);
-          box-shadow: 0 0 20px rgba(252, 227, 3, 0.3);
+          box-shadow: 0 0 20px rgba(252, 227, 3, 30%);
         }
 
         .valor-icono {
@@ -112,12 +112,12 @@
 
     .compromiso-content {
       position: relative;
-      background: linear-gradient(145deg, rgba(40, 40, 40, 0.9), rgba(20, 20, 20, 0.95));
+      background: linear-gradient(145deg, rgba(40, 40, 40, 90%), rgba(20, 20, 20, 95%));
       border: 2px solid v.$color-secondary;
       border-radius: v.$border-radius;
       padding: 3rem;
       text-align: center;
-      box-shadow: 0 0 30px rgba(252, 227, 3, 0.2);
+      box-shadow: 0 0 30px rgba(252, 227, 3, 20%);
 
       h3 {
         color: v.$color-secondary;
@@ -166,7 +166,7 @@
   .cta-section {
     text-align: center;
     padding: 4rem 2rem;
-    background: linear-gradient(145deg, rgba(40, 40, 40, 0.9), rgba(20, 20, 20, 0.95));
+    background: linear-gradient(145deg, rgba(40, 40, 40, 90%), rgba(20, 20, 20, 95%));
     border: 2px solid v.$color-secondary;
     border-radius: v.$border-radius;
     margin-bottom: 2rem;
@@ -198,7 +198,7 @@
 
       &:hover {
         transform: translateY(-2px);
-        box-shadow: 0 0 20px rgba(252, 227, 3, 0.4);
+        box-shadow: 0 0 20px rgba(252, 227, 3, 40%);
       }
     }
   }

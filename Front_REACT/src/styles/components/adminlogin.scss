@@ -11,11 +11,11 @@
 
   .admin-login-form {
     background: #202020;
-    padding: 2.5rem 2rem 2rem 2rem;
+    padding: 2.5rem 2rem 2rem;
     border-radius: 16px;
     width: 100%;
     max-width: 420px;
-    box-shadow: 0 0 12px 2px rgba(255, 216, 0, 0.15);
+    box-shadow: 0 0 12px 2px rgba(255, 216, 0, 15%);
     border: 2px solid v.$color-secondary;
     position: relative;
     margin: 0;
@@ -73,11 +73,11 @@
     }
 
     .error {
-      color: #ff4444;
+      color: #f44;
       text-align: center;
       margin-bottom: 1rem;
       padding: 0.5rem;
-      background-color: rgba(255, 68, 68, 0.1);
+      background-color: rgba(255, 68, 68, 10%);
       border-radius: 4px;
     }
   }

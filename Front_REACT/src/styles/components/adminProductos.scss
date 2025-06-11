@@ -48,6 +48,7 @@
 
       &[type="number"] {
         -moz-appearance: textfield;
+
         &::-webkit-outer-spin-button,
         &::-webkit-inner-spin-button {
           -webkit-appearance: none;
@@ -73,6 +74,7 @@
       &.primary-button {
         background: v.$color-secondary;
         color: #000;
+
         &:hover {
           background: darken(v.$color-secondary, 10%);
         }
@@ -81,6 +83,7 @@
       &.secondary-button {
         background: #333;
         color: #fff;
+
         &:hover {
           background: #444;
         }
@@ -133,6 +136,7 @@
           &.edit-button {
             background: v.$color-secondary;
             color: #000;
+
             &:hover {
               background: darken(v.$color-secondary, 10%);
             }
@@ -141,6 +145,7 @@
           &.delete-button {
             background: #c62828;
             color: #fff;
+
             &:hover {
               background: darken(#c62828, 10%);
             }

@@ -1,49 +1,66 @@
 @use '../variables' as v;
 
+/* Removemos los estilos del body para evitar conflictos */
+
 .admin-panel {
   display: flex;
   min-height: 100vh;
-  color: v.$color-light;
+  width: 100%;
   background: v.$color-dark;
+  color: v.$color-light;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 
   .sidebar {
-    width: 250px;
+    width: 280px;
     background: v.$color-black;
-    padding: 2rem 1rem;
-    display: flex;
-    flex-direction: column;
+    min-height: 100vh;
     border-right: 2px solid v.$color-secondary;
+    padding: 2rem 1.5rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 10%);
 
     .user-profile {
       display: flex;
       align-items: center;
       gap: 1rem;
-      padding: 1rem;
+      padding-bottom: 2rem;
       margin-bottom: 2rem;
-      border-bottom: 1px solid v.$color-border;
+      border-bottom: 1px solid rgba(v.$color-secondary, 0.2);
 
       .avatar {
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
         background: v.$color-secondary;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.5rem;
-        color: v.$color-black;
+        font-size: 1.8rem;
         font-weight: bold;
+        color: v.$color-black;
+        box-shadow: 0 0 15px rgba(v.$color-secondary, 0.3);
       }
 
       .user-info {
         .name {
-          font-size: 1.1rem;
+          font-size: 1.2rem;
           font-weight: 600;
           color: v.$color-light;
+          margin-bottom: 0.3rem;
         }
+
         .email {
-          font-size: 0.85rem;
-          color: rgba(255, 255, 255, 0.6);
+          font-size: 0.9rem;
+          color: rgba(v.$color-light, 0.7);
         }
       }
     }
@@ -51,47 +68,56 @@
     .nav-links {
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
-      flex: 1;
+      gap: 0.8rem;
 
       .nav-item {
         display: flex;
         align-items: center;
         gap: 1rem;
-        padding: 0.75rem 1rem;
-        color: rgba(255, 255, 255, 0.8);
-        text-decoration: none;
-        border-radius: v.$border-radius-sm;
-        transition: all 0.3s ease;
-        cursor: pointer;
-        border: none;
+        padding: 1rem 1.2rem;
+        color: v.$color-light;
         background: transparent;
+        border: none;
+        border-radius: v.$border-radius-sm;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
         text-align: left;
+        width: 100%;
 
         i {
           font-size: 1.2rem;
           width: 24px;
-          text-align: center;
         }
 
-        &:hover, &.active {
+        &:hover {
+          background: rgba(v.$color-secondary, 0.1);
+          transform: translateX(5px);
+        }
+
+        &.active {
           background: v.$color-secondary;
           color: v.$color-black;
-          box-shadow: v.$shadow-card;
+          font-weight: 500;
+          box-shadow: 0 4px 12px rgba(v.$color-secondary, 0.2);
         }
       }
     }
 
     .logout-button {
-      margin-top: auto;
-      padding: 0.75rem 1rem;
-      background: v.$color-darker;
-      color: v.$color-error;
-      border: 1px solid v.$color-error;
-      border-radius: v.$border-radius-sm;
+      position: absolute;
+      bottom: 2rem;
+      left: 1.5rem;
+      right: 1.5rem;
+      padding: 1rem;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      justify-content: center;
+      gap: 0.8rem;
+      background: rgba(v.$color-error, 0.1);
+      color: v.$color-error;
+      border: 1px solid rgba(v.$color-error, 0.3);
+      border-radius: v.$border-radius-sm;
       cursor: pointer;
       transition: all 0.3s ease;
 
@@ -100,48 +126,54 @@
       }
 
       &:hover {
-        background: rgba(v.$color-error, 0.1);
+        background: v.$color-error;
+        color: v.$color-light;
       }
     }
   }
 
   .main-content {
     flex: 1;
+    margin-left: 280px;
     padding: 2rem;
-    overflow-y: auto;
+    min-height: 100vh;
+    background: v.$color-dark;
 
     .dashboard-header {
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
 
       .welcome-text {
         h1 {
-          font-size: 1.8rem;
+          font-size: 2rem;
+          font-weight: 600;
           color: v.$color-light;
           margin-bottom: 0.5rem;
         }
+
         p {
-          color: rgba(255, 255, 255, 0.6);
+          color: rgba(v.$color-light, 0.7);
+          font-size: 1.1rem;
         }
       }
     }
 
     .stats-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 1.5rem;
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
 
       .stat-card {
-        background: v.$color-darker;
-        border: v.$border-card;
+        background: v.$color-black;
+        border: 2px solid v.$color-secondary;
         border-radius: v.$border-radius;
         padding: 1.5rem;
-        box-shadow: v.$shadow-card;
         transition: all 0.3s ease;
+        box-shadow: v.$shadow-card;
 
         &:hover {
-          box-shadow: v.$shadow-card-hover;
           transform: translateY(-5px);
+          box-shadow: v.$shadow-card-hover;
         }
 
         .stat-header {
@@ -151,13 +183,14 @@
           margin-bottom: 1rem;
 
           .label {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
+            font-size: 1rem;
+            color: rgba(v.$color-light, 0.7);
+            font-weight: 500;
           }
 
           .icon {
-            width: 40px;
-            height: 40px;
+            width: 48px;
+            height: 48px;
             background: v.$color-secondary;
             border-radius: v.$border-radius-sm;
             display: flex;
@@ -165,17 +198,17 @@
             justify-content: center;
 
             i {
+              font-size: 1.4rem;
               color: v.$color-black;
-              font-size: 1.2rem;
             }
           }
         }
 
         .value {
-          font-size: 2rem;
-          font-weight: 600;
+          font-size: 2.2rem;
+          font-weight: 700;
           color: v.$color-light;
-          margin-bottom: 0.5rem;
+          margin-bottom: 0.8rem;
         }
 
         .trend {
@@ -183,71 +216,22 @@
           align-items: center;
           gap: 0.5rem;
           font-size: 0.9rem;
+          font-weight: 500;
+
+          i {
+            font-size: 1rem;
+          }
 
           &.up {
             color: v.$color-success;
           }
+
           &.down {
             color: v.$color-error;
           }
         }
       }
     }
-
-    .chart-section {
-      .chart-container {
-        background: v.$color-darker;
-        border: v.$border-card;
-        border-radius: v.$border-radius;
-        padding: 1.5rem;
-        box-shadow: v.$shadow-card;
-
-        h3 {
-          color: v.$color-light;
-          font-size: 1.2rem;
-          margin-bottom: 1.5rem;
-        }
-
-        .chart-content {
-          height: 300px;
-          position: relative;
-        }
-      }
-    }
-
-    .coming-soon {
-      text-align: center;
-      padding: 4rem 2rem;
-
-      h2 {
-        color: v.$color-secondary;
-        font-size: 2rem;
-        margin-bottom: 1rem;
-      }
-
-      p {
-        color: rgba(255, 255, 255, 0.6);
-        font-size: 1.1rem;
-      }
-    }
-  }
-}
-
-/* Scrollbar styles */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: v.$color-secondary;
-  border-radius: v.$border-radius-sm;
-
-  &:hover {
-    background-color: darken(v.$color-secondary, 10%);
   }
 }
 
@@ -255,11 +239,11 @@
 @media (max-width: 1024px) {
   .admin-panel {
     .sidebar {
-      width: 200px;
+      width: 240px;
     }
 
-    .stats-container {
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    .main-content {
+      margin-left: 240px;
     }
   }
 }
@@ -270,31 +254,39 @@
 
     .sidebar {
       width: 100%;
+      position: relative;
       padding: 1rem;
+      min-height: auto;
 
       .nav-links {
         flex-direction: row;
         overflow-x: auto;
         padding-bottom: 1rem;
+        margin-bottom: 1rem;
 
         .nav-item {
           white-space: nowrap;
+          padding: 0.8rem 1rem;
+          min-width: fit-content;
         }
+      }
+
+      .logout-button {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        margin-top: 1rem;
       }
     }
 
     .main-content {
+      margin-left: 0;
       padding: 1rem;
-    }
 
-    .stats-container {
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1rem;
-    }
-
-    .chart-section {
-      .chart-container {
-        padding: 1rem;
+      .stats-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
       }
     }
   }

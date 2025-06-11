@@ -10,7 +10,7 @@ const AdminRoute = ({ children }) => {
   }
 
   if (!user || user.idRol !== 2) {
-    return <Navigate to="/adminLogin" replace />;
+    return <Navigate to="/admin-login" replace />;
   }
 
   return children;

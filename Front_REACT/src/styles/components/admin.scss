@@ -4,7 +4,7 @@
   background: #181818;
   color: #fff;
   min-height: 100vh;
-  padding: 2rem 1rem 3rem 1rem;
+  padding: 2rem 1rem 3rem;
   max-width: 1200px;
   margin: 0 auto;
 
@@ -18,7 +18,7 @@
   .admin-section {
     background: #222;
     border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 12%);
     padding: 2rem;
     margin-bottom: 2rem;
   }

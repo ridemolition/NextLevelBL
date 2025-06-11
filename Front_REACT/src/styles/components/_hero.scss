@@ -7,8 +7,8 @@
   padding: 2rem 0;
   background: linear-gradient(
     to bottom,
-    #000000,
-    rgba(0, 0, 0, 0.95)
+    #000,
+    rgba(0, 0, 0, 95%)
   );
   overflow: hidden;
   z-index: 10;
@@ -57,9 +57,9 @@
       padding: 0;
       letter-spacing: 4px;
       text-shadow: 
-        0 0 10px rgba(255, 255, 255, 0.3),
-        0 0 20px rgba(252, 227, 3, 0.2),
-        0 0 30px rgba(252, 227, 3, 0.1);
+        0 0 10px rgba(255, 255, 255, 30%),
+        0 0 20px rgba(252, 227, 3, 20%),
+        0 0 30px rgba(252, 227, 3, 10%);
       transition: transform 0.1s ease-out;
       animation: titleFloat 6s ease-in-out infinite;
       transform-style: preserve-3d;
@@ -84,8 +84,8 @@
       width: 200%;
       height: 200%;
       background: 
-        radial-gradient(circle at center, rgba(252, 227, 3, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at center, rgba(252, 227, 3, 0.05) 0%, transparent 30%);
+        radial-gradient(circle at center, rgba(252, 227, 3, 10%) 0%, transparent 50%),
+        radial-gradient(circle at center, rgba(252, 227, 3, 5%) 0%, transparent 30%);
       animation: rotateBg 20s linear infinite;
       pointer-events: none;
     }
@@ -98,7 +98,7 @@
       bottom: 0;
       background: radial-gradient(
         circle at var(--glow-x) var(--glow-y),
-        rgba(252, 227, 3, 0.2) 0%,
+        rgba(252, 227, 3, 20%) 0%,
         transparent 50%
       );
       pointer-events: none;
@@ -136,8 +136,9 @@
   height: calc(90vh - #{v.$header-height});
   display: flex;
   align-items: center;
-  background: #000000;
+  background: #000;
   overflow: hidden;
+
   @include v.lateral-fade;
 
   .dynamic-glow {
@@ -145,7 +146,7 @@
     inset: 0;
     background: radial-gradient(
       circle at var(--mouse-x) var(--mouse-y),
-      rgba(252, 227, 3, 0.15) 0%,
+      rgba(252, 227, 3, 15%) 0%,
       transparent 50%
     );
     mix-blend-mode: screen;
@@ -209,7 +210,7 @@
           inset: 0;
           background: radial-gradient(
             circle at center,
-            rgba(252, 227, 3, 0.3) 0%,
+            rgba(252, 227, 3, 30%) 0%,
             transparent 70%
           );
           mix-blend-mode: screen;
@@ -225,7 +226,7 @@
     inset: 0;
     background: 
       linear-gradient(90deg, #000 0%, transparent 10%, transparent 90%, #000 100%),
-      linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
+      linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 20%) 100%);
     pointer-events: none;
     z-index: 4;
   }
@@ -236,6 +237,7 @@
   0%, 100% {
     transform: translateY(0) translateZ(0);
   }
+
   50% {
     transform: translateY(-10px) translateZ(20px);
   }
@@ -246,6 +248,7 @@
     opacity: 0.7;
     transform: translateY(-5px) translateZ(10px) scale(0.98);
   }
+
   to {
     opacity: 1;
     transform: translateY(-5px) translateZ(10px) scale(1);
@@ -262,6 +265,7 @@
     opacity: 0.5;
     transform: translateY(-50%) translateZ(20px) scale(0.95);
   }
+
   to { 
     opacity: 1;
     transform: translateY(-50%) translateZ(20px) scale(1);
@@ -285,6 +289,7 @@
       .main-title {
         font-size: 2.5rem;
       }
+
       .sub-title {
         font-size: 1.8rem;
       }
@@ -310,6 +315,7 @@
       .main-title {
         font-size: 2rem;
       }
+
       .sub-title {
         font-size: 1.5rem;
       }
