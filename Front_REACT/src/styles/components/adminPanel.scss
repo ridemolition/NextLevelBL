@@ -8,12 +8,7 @@
   width: 100%;
   background: v.$color-dark;
   color: v.$color-light;
-  overflow: hidden;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: relative;
 
   .sidebar {
     width: 280px;
@@ -131,13 +126,14 @@
       }
     }
   }
-
   .main-content {
     flex: 1;
     margin-left: 280px;
     padding: 2rem;
     min-height: 100vh;
     background: v.$color-dark;
+    overflow-y: auto;
+    max-height: 100vh;
 
     .dashboard-header {
       margin-bottom: 2.5rem;

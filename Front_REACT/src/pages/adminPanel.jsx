@@ -15,16 +15,15 @@ const AdminPanel = () => {
     rating: 8.5,
     completion: 45
   });
-
   useEffect(() => {
     if (!user || user.idRol !== 2) {
-      navigate('/admin-login');
+      navigate('/adminLogin');
     }
   }, [user, navigate]);
 
   const handleLogout = () => {
     logout();
-    navigate('/admin-login');
+    navigate('/adminLogin');
   };
 
   return (

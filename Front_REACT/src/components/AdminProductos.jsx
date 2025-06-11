@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../utils/axiosConfig';
 import '../styles/components/adminProductos.scss';
-
-const API_URL = 'http://localhost:5000/api';
 
 const AdminProductos = () => {
   const [productos, setProductos] = useState([]);
@@ -11,8 +9,7 @@ const AdminProductos = () => {
   const [mensaje, setMensaje] = useState('');
 
   const fetchProductos = async () => {
-    try {
-      const res = await axios.get(`${API_URL}/productos`);
+    try {      const res = await api.get('/productos');
       // Asegurar que los precios sean números
       const productosConPreciosNumericos = res.data.map(p => ({
         ...p,
@@ -39,7 +36,7 @@ const AdminProductos = () => {
   const handleAdd = async e => {
     e.preventDefault();
     try {
-      await axios.post(`${API_URL}/productos`, {
+      await api.post('/productos', {
         nombre: nuevo.nombre,
         descripcion: nuevo.descripcion,
         precio: parseFloat(nuevo.precio),
@@ -66,7 +63,7 @@ const AdminProductos = () => {
   const handleUpdate = async e => {
     e.preventDefault();
     try {
-      await axios.put(`${API_URL}/productos/${editando.idProducto}`, {
+      await api.put(`/productos/${editando.idProducto}`, {
         nombre: nuevo.nombre,
         descripcion: nuevo.descripcion,
         precio: parseFloat(nuevo.precio),
@@ -82,15 +79,19 @@ const AdminProductos = () => {
       setMensaje('Error al actualizar el producto');
     }
   };
-
   const handleDelete = async id => {
     try {
-      await axios.delete(`${API_URL}/productos/${id}`);
+      await api.delete(`/productos/${id}`);
       setMensaje('Producto eliminado exitosamente');
       fetchProductos();
     } catch (error) {
-      console.error('Error al eliminar producto:', error);
-      setMensaje('Error al eliminar el producto');
+      console.error('Error al eliminar producto:', {
+        message: error.message,
+        response: error.response?.data,
+        status: error.response?.status,
+        headers: error.response?.headers
+      });
+      setMensaje(`Error al eliminar el producto: ${error.response?.data?.error || error.message}`);
     }
   };
 
